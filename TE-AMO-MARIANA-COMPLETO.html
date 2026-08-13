@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te Amo Mariana</title>
+<script>
+document.documentElement.classList.add('locked');
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+</script>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rose-50: #fff7fa;
+    --rose-100: #ffe8f0;
+    --rose-200: #f8c7d8;
+    --rose-300: #ee92b0;
+    --rose-500: #d95d8a;
+    --rose-700: #8d2f57;
+    --wine: #4a1d31;
+    --cream: #fff8fb;
+    --shadow: rgba(141, 47, 87, .28);
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+html.locked,
+html.locked body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+html.locked body {
+    position: fixed;
+    inset: 0;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 232, 240, .95), transparent 34%),
+        linear-gradient(180deg, #fff7fa 0%, #f8c7d8 52%, #d95d8a 100%);
+    color: var(--wine);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+#gate {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100svh;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+        linear-gradient(rgba(255, 232, 240, .88), rgba(217, 93, 138, .86)),
+        url("assets/mariana_mobile.png") center / cover no-repeat;
+}
+
+.gate-box {
+    width: min(92vw, 520px);
+    padding: 34px 28px;
+    text-align: center;
+    border: 2px solid rgba(255, 248, 251, .95);
+    border-radius: 18px;
+    background: rgba(255, 247, 250, .9);
+    box-shadow: 0 24px 70px var(--shadow);
+}
+
+.gate-box h1 {
+    color: var(--rose-700);
+    font-size: clamp(28px, 7vw, 42px);
+    line-height: 1.05;
+}
+
+.gate-box p {
+    margin-top: 8px;
+    color: var(--rose-500);
+    font-style: italic;
+}
+
+.gate-box input {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 22px;
+    padding: 13px 15px;
+    border: 1px solid var(--rose-300);
+    border-radius: 12px;
+    background: var(--cream);
+    color: var(--wine);
+    font-size: 16px;
+    outline: none;
+}
+
+.gate-box input:focus {
+    border-color: var(--rose-500);
+    box-shadow: 0 0 0 4px rgba(217, 93, 138, .18);
+}
+
+.btn {
+    min-height: 48px;
+    margin-top: 16px;
+    padding: 12px 26px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--rose-500), var(--rose-200));
+    color: var(--wine);
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(217, 93, 138, .25);
+}
+
+.site {
+    position: relative;
+    min-height: 100vh;
+    isolation: isolate;
+}
+
+.stickers {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sticker {
+    position: absolute;
+    width: clamp(38px, 6vw, 72px);
+    opacity: .34;
+    filter: drop-shadow(0 10px 18px rgba(141, 47, 87, .2));
+    animation: float 9s ease-in-out infinite;
+}
+
+.sticker:nth-child(1) { left: 6%; top: 12%; animation-delay: -1s; }
+.sticker:nth-child(2) { right: 9%; top: 18%; animation-delay: -4s; }
+.sticker:nth-child(3) { left: 14%; top: 68%; animation-delay: -6s; }
+.sticker:nth-child(4) { right: 18%; top: 76%; animation-delay: -2s; }
+.sticker:nth-child(5) { left: 48%; top: 45%; animation-delay: -5s; }
+.sticker:nth-child(6) { right: 4%; top: 52%; animation-delay: -8s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-22px) rotate(6deg); }
+}
+
+.cover {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--rose-100);
+}
+
+.cover picture,
+.cover img {
+    display: block;
+    width: 100%;
+}
+
+.cover img {
+    height: auto;
+}
+
+.content {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 46px 0 56px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--rose-700);
+    font-size: clamp(32px, 6vw, 58px);
+    line-height: 1;
+}
+
+.section-note {
+    margin-top: 10px;
+    text-align: center;
+    color: #71314b;
+    font-size: 18px;
+}
+
+.memories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 32px;
+}
+
+.memory-card {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid rgba(255, 248, 251, .9);
+    border-radius: 8px;
+    background: rgba(255, 247, 250, .76);
+    box-shadow: 0 16px 36px rgba(141, 47, 87, .16);
+}
+
+.memory-top {
+    position: relative;
+    min-height: 170px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background:
+        linear-gradient(rgba(255, 232, 240, .84), rgba(238, 146, 176, .72)),
+        url("assets/te_amo_mariana.png") center / cover no-repeat;
+}
+
+.memory-top img {
+    width: 88px;
+    opacity: .9;
+}
+
+.memory-card h3 {
+    margin-top: 16px;
+    color: var(--rose-700);
+    font-size: 25px;
+}
+
+.memory-card input {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--rose-300);
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--wine);
+    font-size: 16px;
+}
+
+.message {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 8px;
+    background: rgba(255, 232, 240, .82);
+    color: var(--wine);
+    line-height: 1.55;
+}
+
+.message.open {
+    display: block;
+}
+
+.footer {
+    padding: 0 16px 44px;
+    text-align: center;
+    color: var(--rose-700);
+    font-size: clamp(24px, 6vw, 42px);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .memories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    #gate {
+        padding: max(18px, env(safe-area-inset-top)) 16px max(18px, env(safe-area-inset-bottom));
+    }
+
+    .gate-box {
+        width: calc(100vw - 32px);
+        padding: 28px 18px;
+    }
+
+    .gate-box .btn {
+        width: auto;
+        min-width: 115px;
+        padding: 12px 26px;
+    }
+
+    .cover img {
+        min-height: 100svh;
+        object-fit: cover;
+    }
+
+    .content {
+        width: min(100% - 24px, 520px);
+        padding-top: 34px;
+    }
+
+    .memories {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .memory-top {
+        min-height: 150px;
+    }
+
+    .sticker {
+        opacity: .26;
+    }
+}
+</style>
+<style>
+/* Paleta inspirada nas novas artes: vinho, cobre, creme e vermelho luminoso. */
+:root {
+    --rose-50: #fff8ef;
+    --rose-100: #f5dfcf;
+    --rose-200: #e7ad87;
+    --rose-300: #c96847;
+    --rose-500: #a9232f;
+    --rose-700: #67171b;
+    --wine: #2a0c0b;
+    --cream: #fff8ec;
+    --shadow: rgba(42, 12, 11, .34);
+}
+
+body {
+    background:
+        radial-gradient(circle at 18% 5%, rgba(201, 104, 71, .24), transparent 30%),
+        linear-gradient(180deg, #220b09 0%, #5a1b16 42%, #35100d 100%);
+    color: #fff5e8;
+}
+
+#gate {
+    isolation: isolate;
+    background:
+        linear-gradient(180deg, rgba(20, 5, 4, .54), rgba(51, 10, 8, .8));
+    overflow: hidden;
+}
+
+#gate::before {
+    content: "";
+    position: absolute;
+    inset: -22px;
+    z-index: -1;
+    background: url("assets/embedded-fd989ad402d9f536.png") center / cover no-repeat;
+    filter: blur(9px);
+    transform: scale(1.04);
+}
+
+.gate-box {
+    border-color: rgba(255, 239, 220, .72);
+    background: rgba(36, 9, 7, .88);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .54);
+    backdrop-filter: blur(16px);
+}
+
+.gate-box h1 { color: #fff2df; }
+.gate-box p { color: #e7ad87; }
+
+.gate-box input,
+.memory-card input {
+    border-color: rgba(231, 173, 135, .62);
+    background: rgba(255, 248, 236, .96);
+    color: #35100d;
+}
+
+.gate-box input:focus,
+.memory-card input:focus {
+    border-color: #e7ad87;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(201, 104, 71, .22);
+}
+
+.btn {
+    background: linear-gradient(135deg, #9d1825, #d46d48);
+    color: #fff8ec;
+    box-shadow: 0 12px 28px rgba(65, 8, 10, .35);
+}
+
+.btn:hover { filter: brightness(1.08); }
+
+.sticker {
+    width: clamp(16px, 2.2vw, 28px);
+    aspect-ratio: 1;
+    opacity: .78;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, .38));
+    animation-duration: 16s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transform: rotate(45deg);
+    border-radius: 3px 0 3px 0;
+    background: #fff;
+}
+
+.sticker::before,
+.sticker::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.sticker::before { left: -50%; }
+.sticker::after { top: -50%; }
+}
+
+.sticker:nth-child(1) { left: 7%; top: 18%; animation-delay: -3s; }
+.sticker:nth-child(2) { right: 10%; top: 31%; animation-delay: -11s; }
+.sticker:nth-child(3) { left: 13%; top: 72%; animation-delay: -17s; }
+.sticker:nth-child(4) { right: 16%; top: 80%; animation-delay: -7s; }
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(42deg); }
+    25% { transform: translate(10px, -18px) rotate(46deg); }
+    50% { transform: translate(-4px, -32px) rotate(49deg); }
+    75% { transform: translate(-12px, -14px) rotate(44deg); }
+}
+
+.cover {
+    min-height: 100vh;
+    overflow: hidden;
+    background: #35100d;
+}
+.cover img {
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content {
+    width: min(1120px, calc(100% - 32px));
+    padding-top: 56px;
+}
+
+.section-title { color: #fff1dc; }
+.section-note { color: #e7ad87; }
+
+.memory-card {
+    border: 1px solid rgba(231, 173, 135, .34);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(91, 25, 20, .92), rgba(37, 9, 7, .94));
+    box-shadow: 0 18px 44px rgba(0, 0, 0, .3);
+}
+
+.memory-top {
+    min-height: 190px;
+    border-radius: 13px;
+    background: radial-gradient(circle, rgba(169, 35, 47, .3), rgba(20, 4, 3, .82));
+}
+
+.memory-top img {
+    width: min(86%, 250px);
+    max-height: 170px;
+    object-fit: contain;
+    opacity: 1;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .38));
+}
+
+.memory-card h3 { color: #f4c4a2; }
+
+.message {
+    border: 1px solid rgba(231, 173, 135, .28);
+    background: rgba(255, 239, 220, .94);
+    color: #40120f;
+}
+
+.footer { color: #f4c4a2; }
+
+@media (max-width: 620px) {
+    #gate::before { background-position: 64% center; }
+    .cover img {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: 62% center;
+    }
+    .cover { min-height: 0; }
+    .sticker { width: 18px; opacity: .64; }
+}
+</style>
+<style>
+/* Fundo embaçado da seção Nossas memórias */
+.content {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+}
+.content::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc(50% - 50vw);
+    z-index: -2;
+    background: url("assets/embedded-fd989ad402d9f536.png") center / cover fixed no-repeat;
+    filter: blur(12px);
+    transform: scale(1.04);
+}
+.content::after {
+    content: "";
+    position: absolute;
+    inset: 0 calc(50% - 50vw);
+    z-index: -1;
+    background: rgba(54, 10, 8, .46);
+}
+.memories {
+    position: relative;
+    margin-top: 42px;
+    padding-top: 34px;
+    padding-bottom: 38px;
+}
+.memories::before,
+.memories::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: min(760px, 88%);
+    height: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, #e7ad87 18%, #fff1dc 50%, #e7ad87 82%, transparent);
+    box-shadow: 0 0 12px rgba(231, 173, 135, .32);
+}
+.memories::before { top: 0; }
+.memories::after { bottom: 0; }
+.memory-card {
+    background: linear-gradient(145deg, rgba(91, 25, 20, .8), rgba(37, 9, 7, .82));
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+}
+@media (max-width: 620px) {
+    .content::before {
+        background-attachment: scroll;
+        background-position: 62% center;
+        filter: blur(9px);
+    }
+    .memories {
+        margin-top: 32px;
+        padding-top: 28px;
+        padding-bottom: 30px;
+    }
+}
+</style>
+<style>
+/* Correção das divisões da seção, sem vazamento do fundo embaçado. */
+.content {
+    width: 100%;
+    max-width: none;
+    padding: 56px max(16px, calc((100vw - 1120px) / 2)) 56px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #681f19 0%, #4d1512 100%);
+    border-top: 2px solid #e7ad87;
+    border-bottom: 2px solid #e7ad87;
+    box-shadow: none;
+}
+.content::before,
+.content::after,
+.memories::before,
+.memories::after {
+    display: none !important;
+    content: none !important;
+}
+.memories {
+    margin-top: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.footer {
+    padding-top: 34px;
+    background: #35100d;
+}
+@media (max-width: 620px) {
+    .content {
+        width: 100%;
+        padding: 36px 12px 42px;
+        background-position: 62% center;
+    }
+}
+</style>
+<style>
+/* Fundo embaçado confinado e linhas ao redor das caixinhas. */
+.content {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #5a1b16;
+}
+.content::before {
+    display: block !important;
+    content: "" !important;
+    position: absolute;
+    inset: -18px;
+    z-index: -2;
+    background: url("assets/embedded-fd989ad402d9f536.png") center / cover no-repeat;
+    filter: blur(9px);
+    transform: scale(1.025);
+}
+.content::after {
+    display: block !important;
+    content: "" !important;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(67, 13, 10, .5);
+}
+.memories {
+    position: relative;
+    margin-top: 38px;
+    padding-top: 34px;
+    padding-bottom: 38px;
+    border-top: 2px solid #edb18d;
+    border-bottom: 2px solid #edb18d;
+    box-shadow: none;
+}
+.memory-card {
+    box-shadow: 0 7px 18px rgba(0, 0, 0, .14);
+}
+@media (max-width: 620px) {
+    .content::before {
+        background-position: 62% center;
+        filter: blur(7px);
+    }
+    .content::after { background: rgba(67, 13, 10, .46); }
+    .memories {
+        margin-top: 30px;
+        padding-top: 28px;
+        padding-bottom: 30px;
+    }
+}
+</style>
+<style>
+.memory-gallery-layout {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr) minmax(120px, 180px);
+    align-items: center;
+    gap: 22px;
+}
+.memory-gallery-layout .memories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.couple-photo {
+    padding: 0;
+    border: 2px solid rgba(237, 177, 141, .8);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #2b0908;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    transition: transform .25s ease, border-color .25s ease;
+}
+.couple-photo:hover,
+.couple-photo:focus-visible {
+    transform: translateY(-5px) scale(1.02);
+    border-color: #fff1dc;
+    outline: none;
+}
+.couple-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+.photo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    place-items: center;
+    padding: 24px;
+    background: rgba(17, 3, 3, .88);
+    backdrop-filter: blur(9px);
+}
+.photo-modal.open { display: grid; }
+.photo-modal img {
+    display: block;
+    max-width: min(92vw, 760px);
+    max-height: 88vh;
+    border: 2px solid #e7ad87;
+    border-radius: 18px;
+    object-fit: contain;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .55);
+}
+.photo-modal-close {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 241, 220, .7);
+    border-radius: 50%;
+    background: #67171b;
+    color: #fff;
+    font: 700 28px/1 Arial, sans-serif;
+    cursor: pointer;
+}
+@media (max-width: 1050px) {
+    .memory-gallery-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .memory-gallery-layout .memories {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    .couple-photo {
+        width: min(100%, 260px);
+        justify-self: center;
+    }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout { gap: 14px; }
+    .memory-gallery-layout .memories { grid-template-columns: 1fr; }
+    .couple-photo img { aspect-ratio: 3 / 4; }
+    .photo-modal { padding: 16px; }
+}
+</style>
+<style>
+/* Tarjas laterais: não participam do layout e não alteram as caixinhas. */
+.memory-gallery-layout,
+.memory-gallery-layout .memories {
+    display: block;
+}
+.memory-gallery-layout {
+    position: relative;
+}
+.memory-gallery-layout .memories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.memory-gallery-layout .couple-photo {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 62px;
+    height: 250px;
+    border-radius: 14px;
+    transform: translateY(-50%);
+}
+.memory-gallery-layout .couple-photo:first-child { left: -72px; }
+.memory-gallery-layout .couple-photo:last-child { right: -72px; }
+.memory-gallery-layout .couple-photo:hover,
+.memory-gallery-layout .couple-photo:focus-visible {
+    transform: translateY(-50%) scale(1.04);
+}
+.memory-gallery-layout .couple-photo img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+}
+.memory-gallery-layout .couple-photo::after {
+    content: "VER FOTO";
+    position: absolute;
+    inset: auto 0 0;
+    padding: 10px 3px;
+    background: linear-gradient(transparent, rgba(42, 7, 6, .96));
+    color: #fff1dc;
+    font: 700 10px/1.15 Arial, sans-serif;
+    letter-spacing: .05em;
+    text-align: center;
+}
+@media (max-width: 1250px) {
+    .memory-gallery-layout .couple-photo {
+        position: fixed;
+        top: 55%;
+        width: 42px;
+        height: 170px;
+        border-radius: 10px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 0; }
+    .memory-gallery-layout .couple-photo:last-child { right: 0; }
+}
+@media (max-width: 900px) {
+    .memory-gallery-layout .memories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .memories { grid-template-columns: 1fr; }
+    .memory-gallery-layout .couple-photo {
+        width: 36px;
+        height: 138px;
+    }
+    .memory-gallery-layout .couple-photo::after {
+        content: "FOTO";
+        font-size: 9px;
+        padding-bottom: 7px;
+    }
+}
+</style>
+<style>
+/* Centralização e acabamento visual das molduras laterais. */
+.memory-gallery-layout .couple-photo {
+    top: 50%;
+    width: 72px;
+    height: 238px;
+    padding: 5px;
+    border: 1px solid #f6d0ad;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #f1b183, #6d2119 35%, #2b0908 70%, #d16c48);
+    box-shadow:
+        0 0 0 3px rgba(77, 20, 15, .92),
+        0 0 0 4px rgba(241, 177, 131, .65),
+        0 15px 32px rgba(0, 0, 0, .38),
+        0 0 22px rgba(224, 108, 72, .22);
+}
+.memory-gallery-layout .couple-photo img {
+    border: 1px solid rgba(255, 235, 215, .65);
+    border-radius: 16px;
+    object-position: center center;
+}
+.memory-gallery-layout .couple-photo::before {
+    content: "♥";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    z-index: 2;
+    width: 27px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    transform: translateX(-50%);
+    border: 1px solid #f6d0ad;
+    border-radius: 50%;
+    background: #7b201c;
+    color: #fff4e7;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .35);
+}
+.memory-gallery-layout .couple-photo::after {
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    padding: 22px 2px 8px;
+    border-radius: 0 0 15px 15px;
+    font-size: 9px;
+    text-shadow: 0 1px 3px #000;
+}
+.memory-gallery-layout .couple-photo:first-child img { object-position: 46% center; }
+.memory-gallery-layout .couple-photo:last-child img { object-position: 53% center; }
+@media (max-width: 1250px) {
+    .memory-gallery-layout .couple-photo {
+        top: 50%;
+        width: 58px;
+        height: 200px;
+        padding: 4px;
+        border-radius: 18px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 10px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 10px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 50px;
+        height: 168px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 7px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 7px; }
+}
+</style>
+<style>
+/* Foto inteira sobre fundo embaçado, centralizada nas duas laterais. */
+.memory-gallery-layout .couple-photo {
+    top: 50%;
+    width: 118px;
+    height: 285px;
+    isolation: isolate;
+    background-color: #2b0908;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -138px; }
+.memory-gallery-layout .couple-photo:last-child { right: -138px; }
+.memory-gallery-layout .couple-photo::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 16px;
+    transform: none;
+    background-position: center;
+    background-size: cover;
+    filter: blur(9px) brightness(.55);
+    box-shadow: none;
+}
+.memory-gallery-layout .couple-photo:first-child::before {
+    background-image: url("assets/embedded-6111e5b5b7d23c1c.png");
+}
+.memory-gallery-layout .couple-photo:last-child::before {
+    background-image: url("assets/embedded-af3a6fab53070ed2.png");
+}
+.memory-gallery-layout .couple-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 16px;
+    object-fit: contain;
+    object-position: center;
+}
+.memory-gallery-layout .couple-photo::after {
+    content: "CLIQUE";
+    z-index: 3;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding: 28px 4px 10px;
+    border-radius: 0 0 16px 16px;
+    background: linear-gradient(transparent, rgba(37, 6, 5, .96));
+    color: #fff4e7;
+    font-size: 11px;
+    letter-spacing: .12em;
+}
+@media (max-width: 1350px) {
+    .memory-gallery-layout .couple-photo {
+        position: absolute;
+        width: 94px;
+        height: 250px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: -104px; }
+    .memory-gallery-layout .couple-photo:last-child { right: -104px; }
+}
+@media (max-width: 1180px) {
+    .memory-gallery-layout .couple-photo {
+        position: fixed;
+        top: 50%;
+        width: 72px;
+        height: 210px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 7px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 7px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 58px;
+        height: 180px;
+    }
+    .memory-gallery-layout .couple-photo::after {
+        content: "CLIQUE";
+        font-size: 8px;
+        padding-bottom: 7px;
+    }
+}
+</style>
+<style>
+/* Fotos laterais maiores e embaçadas até serem abertas. */
+.memory-gallery-layout .couple-photo {
+    top: 50%;
+    width: 150px;
+    height: 360px;
+    transform: translateY(-50%);
+}
+.memory-gallery-layout .couple-photo:first-child { left: -170px; }
+.memory-gallery-layout .couple-photo:last-child { right: -170px; }
+.memory-gallery-layout .couple-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(10px) brightness(.68);
+    transform: scale(1.08);
+    transition: filter .3s ease, transform .3s ease;
+}
+.memory-gallery-layout .couple-photo:hover img,
+.memory-gallery-layout .couple-photo:focus-visible img {
+    filter: blur(8px) brightness(.78);
+    transform: scale(1.11);
+}
+.memory-gallery-layout .couple-photo::after {
+    display: none;
+    content: none;
+}
+.photo-modal img {
+    filter: none;
+    transform: none;
+}
+@media (max-width: 1450px) {
+    .memory-gallery-layout .couple-photo {
+        width: 124px;
+        height: 310px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: -136px; }
+    .memory-gallery-layout .couple-photo:last-child { right: -136px; }
+}
+@media (max-width: 1250px) {
+    .memory-gallery-layout .couple-photo {
+        position: fixed;
+        top: 50%;
+        width: 105px;
+        height: 280px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 82px;
+        height: 230px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+</style>
+<style>
+/* Quadros laterais revelados no próprio lugar. */
+.memory-gallery-layout .couple-photo {
+    position: absolute;
+    top: 50%;
+    width: 145px;
+    height: 330px;
+    padding: 7px;
+    transform: translateY(-50%);
+    border: 2px solid #edb18d;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #f4c49f, #7d2b20 28%, #32100d 72%, #d77550);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, .35), 0 0 0 4px rgba(82, 23, 18, .8);
+    overflow: hidden;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -165px; }
+.memory-gallery-layout .couple-photo:last-child { right: -165px; }
+.memory-gallery-layout .couple-photo::before { display: none; content: none; }
+.memory-gallery-layout .couple-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(12px) brightness(.58);
+    transform: scale(1.1);
+    transition: filter .55s ease, transform .55s ease;
+}
+.memory-gallery-layout .couple-photo::after {
+    content: "VER";
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 7px;
+    z-index: 3;
+    padding: 0;
+    border: 1px solid rgba(255, 235, 215, .48);
+    border-radius: 11px;
+    background: rgba(50, 8, 7, .22);
+    color: #fff5e8;
+    font: 700 18px/1 Georgia, serif;
+    letter-spacing: .18em;
+    text-shadow: 0 2px 8px #000;
+}
+.memory-gallery-layout .couple-photo.revealed img {
+    filter: none;
+    transform: none;
+}
+.memory-gallery-layout .couple-photo.revealed::after {
+    display: none;
+    content: none;
+}
+.memory-gallery-layout .couple-photo:hover,
+.memory-gallery-layout .couple-photo:focus-visible {
+    transform: translateY(-50%) scale(1.025);
+}
+@media (max-width: 1400px) {
+    .memory-gallery-layout .couple-photo { width: 118px; height: 290px; }
+    .memory-gallery-layout .couple-photo:first-child { left: -130px; }
+    .memory-gallery-layout .couple-photo:last-child { right: -130px; }
+}
+@media (max-width: 1180px) {
+    .memory-gallery-layout .couple-photo {
+        position: fixed;
+        top: 50%;
+        width: 86px;
+        height: 235px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 7px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 7px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo { width: 64px; height: 190px; padding: 4px; }
+    .memory-gallery-layout .couple-photo::after { inset: 4px; font-size: 12px; }
+}
+</style>
+<style>
+/* Quadros laterais em tamanho triplo, sem participar da grade. */
+.memory-gallery-layout .couple-photo {
+    width: 300px;
+    height: 620px;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -320px; }
+.memory-gallery-layout .couple-photo:last-child { right: -320px; }
+@media (max-width: 1700px) {
+    .memory-gallery-layout .couple-photo {
+        position: fixed;
+        top: 50%;
+        width: 210px;
+        height: 500px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 1000px) {
+    .memory-gallery-layout .couple-photo {
+        width: 150px;
+        height: 390px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 105px;
+        height: 300px;
+    }
+}
+</style>
+<style>
+/* Quadros laterais com o dobro do tamanho anterior. */
+.memory-gallery-layout .couple-photo {
+    width: 600px;
+    height: 1240px;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -620px; }
+.memory-gallery-layout .couple-photo:last-child { right: -620px; }
+@media (max-width: 1700px) {
+    .memory-gallery-layout .couple-photo {
+        width: 420px;
+        height: 1000px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 1000px) {
+    .memory-gallery-layout .couple-photo {
+        width: 300px;
+        height: 780px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 190px;
+        height: 540px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 5px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 5px; }
+}
+</style>
+<style>
+/* Ajuste final: quadros laterais 20% menores. */
+.memory-gallery-layout .couple-photo {
+    width: 480px;
+    height: 992px;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -500px; }
+.memory-gallery-layout .couple-photo:last-child { right: -500px; }
+@media (max-width: 1700px) {
+    .memory-gallery-layout .couple-photo {
+        width: 336px;
+        height: 800px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 1000px) {
+    .memory-gallery-layout .couple-photo {
+        width: 240px;
+        height: 624px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo {
+        width: 152px;
+        height: 432px;
+    }
+    .memory-gallery-layout .couple-photo:first-child { left: 5px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 5px; }
+}
+</style>
+<style>
+/* Quadros laterais um pouco menores. */
+.memory-gallery-layout .couple-photo {
+    width: 408px;
+    height: 843px;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -428px; }
+.memory-gallery-layout .couple-photo:last-child { right: -428px; }
+@media (max-width: 1700px) {
+    .memory-gallery-layout .couple-photo { width: 286px; height: 680px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 1000px) {
+    .memory-gallery-layout .couple-photo { width: 204px; height: 530px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo { width: 129px; height: 367px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 5px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 5px; }
+}
+</style>
+<style>
+/* Redução adicional somente das fotos laterais. */
+.memory-gallery-layout .couple-photo {
+    width: 326px;
+    height: 674px;
+}
+.memory-gallery-layout .couple-photo:first-child { left: -346px; }
+.memory-gallery-layout .couple-photo:last-child { right: -346px; }
+@media (max-width: 1700px) {
+    .memory-gallery-layout .couple-photo { width: 229px; height: 544px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 12px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 12px; }
+}
+@media (max-width: 1000px) {
+    .memory-gallery-layout .couple-photo { width: 163px; height: 424px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 8px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 8px; }
+}
+@media (max-width: 620px) {
+    .memory-gallery-layout .couple-photo { width: 103px; height: 294px; }
+    .memory-gallery-layout .couple-photo:first-child { left: 5px; }
+    .memory-gallery-layout .couple-photo:last-child { right: 5px; }
+}
+</style>
+<style>
+/* Encerramento Mare Personnalite */
+.mare-signature {
+    display: grid;
+    place-items: center;
+    width: 220px;
+    margin: 28px auto 20px;
+    padding: 12px;
+    border: 1px solid rgba(244, 196, 159, .38);
+    border-radius: 50%;
+    background: linear-gradient(145deg, #7b201c, #5a1b16 55%, #2b0908);
+    box-shadow: 0 10px 28px rgba(103, 23, 27, .22);
+}
+.mare-signature::before {
+    content: none;
+}
+.mare-signature img {
+    display: block;
+    width: 194px;
+    height: 194px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #a9232f;
+    background: #000;
+    box-shadow: 0 5px 15px rgba(25, 3, 3, .32);
+}
+@media (max-width: 620px) {
+    .mare-signature {
+        width: 170px;
+        margin: 22px auto 16px;
+        padding: 9px;
+    }
+    .mare-signature img {
+        width: 150px;
+        height: 150px;
+    }
+}</style><style>
+/* Refinamento final: entrada, assinatura e selo */
+#gate {
+    padding: 24px;
+    background: linear-gradient(160deg, rgba(20, 4, 4, .42), rgba(35, 7, 6, .82));
+}
+#gate::before {
+    filter: blur(6px) saturate(.8) brightness(.62);
+    transform: scale(1.035);
+}
+#gate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at center, transparent 12%, rgba(20, 3, 3, .5) 100%);
+}
+.gate-box {
+    width: min(90vw, 430px);
+    padding: clamp(34px, 6vw, 52px) clamp(26px, 5vw, 44px) 38px;
+    border: 1px solid rgba(244, 196, 159, .22);
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(60, 15, 12, .82), rgba(27, 6, 5, .92));
+    box-shadow: 0 32px 90px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255,255,255,.07);
+    backdrop-filter: blur(22px) saturate(1.1);
+}
+.gate-kicker {
+    margin: 0 0 12px;
+    color: #e7ad87;
+    font: 600 11px/1.4 Arial, sans-serif;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+}
+.gate-box h1 {
+    margin: 0;
+    color: #fff8ec;
+    font-size: clamp(34px, 7vw, 48px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.025em;
+}
+.gate-intro {
+    max-width: 310px;
+    margin: 15px auto 0;
+    color: rgba(255, 242, 223, .72) !important;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: normal !important;
+}
+.gate-box input {
+    min-height: 54px;
+    margin-top: 28px;
+    padding: 0 18px;
+    border: 1px solid rgba(231, 173, 135, .3);
+    border-radius: 14px;
+    background: rgba(255, 248, 236, .08);
+    color: #fff8ec;
+    text-align: center;
+    letter-spacing: .12em;
+    box-shadow: inset 0 1px 8px rgba(0,0,0,.16);
+}
+.gate-box input::placeholder { color: rgba(255, 242, 223, .5); letter-spacing: .02em; }
+.gate-box input:focus { border-color: rgba(231, 173, 135, .82); box-shadow: 0 0 0 3px rgba(201,104,71,.14); }
+.gate-box .btn {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 13px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8f2027, #bd4d3d);
+    color: #fff8ec;
+    font: 700 12px/1 Arial, sans-serif;
+    letter-spacing: .2em;
+    box-shadow: 0 12px 28px rgba(56, 5, 7, .3);
+    transition: transform .22s ease, filter .22s ease, box-shadow .22s ease;
+}
+.gate-box .btn:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 16px 34px rgba(56,5,7,.38); }
+.gate-note { margin: 17px 0 0; color: rgba(231, 173, 135, .58); font: 10px/1.4 Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.closing-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 44px 20px 34px;
+    background: linear-gradient(180deg, rgba(53, 16, 13, 0), rgba(43, 9, 8, .3));
+}
+.closing-signature .footer {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #f4c4a2;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1;
+    text-align: center;
+}
+.closing-signature .mare-signature {
+    display: block;
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.closing-signature .mare-signature img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: .88;
+    mix-blend-mode: screen;
+}
+@media (max-width: 620px) {
+    #gate { padding: 16px; }
+    .gate-box { width: min(94vw, 390px); padding: 36px 24px 30px; border-radius: 24px; }
+    .closing-signature { gap: 10px; padding: 34px 16px 28px; }
+    .closing-signature .mare-signature,
+    .closing-signature .mare-signature img { width: 132px; height: 132px; }
+}
+</style><style>
+/* Foto suave e corações do encerramento */
+.closing-signature {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 390px;
+    border: 0 !important;
+    border-top: 0 !important;
+    background: none;
+}
+.closing-signature::before {
+    content: "";
+    position: absolute;
+    inset: -22px;
+    z-index: -2;
+    background: url("assets/casal-final.png") center 42% / cover no-repeat;
+    filter: blur(7px) saturate(.75);
+    transform: scale(1.06);
+}
+.closing-signature::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(53, 16, 13, .82), rgba(43, 9, 8, .68));
+}
+.closing-signature .footer {
+    border: 0 !important;
+    border-top: 0 !important;
+    text-shadow: 0 3px 18px rgba(0,0,0,.5);
+}
+.closing-hearts {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.closing-heart {
+    position: absolute;
+    color: rgba(255,255,255,.92);
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    text-shadow: 0 3px 14px rgba(0,0,0,.38);
+}
+.closing-heart:nth-child(1) { left: 16%; top: 25%; font-size: 27px; transform: rotate(-10deg); }
+.closing-heart:nth-child(2) { right: 17%; top: 30%; font-size: 34px; transform: rotate(9deg); }
+.closing-heart:nth-child(3) { left: 25%; bottom: 18%; font-size: 18px; opacity: .72; }
+.closing-heart:nth-child(4) { right: 25%; bottom: 15%; font-size: 21px; opacity: .78; }
+.closing-signature > .footer,
+.closing-signature > .mare-signature { position: relative; z-index: 1; }
+@media (max-width: 620px) {
+    .closing-signature { min-height: 330px; }
+    .closing-signature::before { background-position: center 38%; filter: blur(6px) saturate(.72); }
+    .closing-heart:nth-child(1) { left: 8%; top: 22%; font-size: 22px; }
+    .closing-heart:nth-child(2) { right: 8%; top: 29%; font-size: 27px; }
+    .closing-heart:nth-child(3) { left: 12%; bottom: 16%; }
+    .closing-heart:nth-child(4) { right: 12%; bottom: 13%; }
+}
+</style></head>
+<body>
+<div id="gate">
+    <div class="gate-box">
+        <p class="gate-kicker">Uma história só nossa</p>
+        <h1>Um pouco de nós</h1>
+        <p class="gate-intro">Algumas lembranças merecem ser guardadas como segredo.</p>
+        <input id="mainPassword" type="password" placeholder="Digite a senha" autocomplete="off" aria-label="Senha para abrir o site">
+        <button class="btn" onclick="enterSite()">ABRIR NOSSA HISTÓRIA</button>
+        <p class="gate-note">Feito com amor</p>
+    </div>
+</div>
+
+<main class="site">
+    <div class="stickers" aria-hidden="true">
+        <span class="sticker"></span>
+        <span class="sticker"></span>
+        <span class="sticker"></span>
+        <span class="sticker"></span>
+    </div>
+
+    <section class="cover" aria-label="Te amo Mariana">
+        <img src="assets/embedded-fd989ad402d9f536.png" alt="Te amo Mariana — você é o amor da minha vida">
+    </section>
+
+    <section class="content">
+        <h2 class="section-title">Nossas memórias</h2>
+        <p class="section-note">Todas as caixinhas abrem com a senha zero.</p>
+
+        <div class="memory-gallery-layout">
+            <button class="couple-photo" type="button" onclick="revealPhoto(this)" aria-label="Ver primeira foto do casal">
+                <img src="assets/embedded-6111e5b5b7d23c1c.png" alt="Foto do casal">
+            </button>
+
+        <div class="memories">
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 1</h3>
+                <input id="m1-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m1')">Abrir</button>
+                <p class="message" id="m1">Você é meu lugar favorito no mundo.</p>
+            </article>
+
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 2</h3>
+                <input id="m2-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m2')">Abrir</button>
+                <p class="message" id="m2">Cada detalhe seu deixa a vida mais bonita.</p>
+            </article>
+
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 3</h3>
+                <input id="m3-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m3')">Abrir</button>
+                <p class="message" id="m3">Meu coração escolhe você todos os dias.</p>
+            </article>
+
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 4</h3>
+                <input id="m4-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m4')">Abrir</button>
+                <p class="message" id="m4">Com você, tudo ganha um carinho a mais.</p>
+            </article>
+
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 5</h3>
+                <input id="m5-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m5')">Abrir</button>
+                <p class="message" id="m5">Te amar é uma das minhas partes preferidas.</p>
+            </article>
+
+            <article class="memory-card">
+                <div class="memory-top"><img src="assets/embedded-00ee7d5bd5e50e69.png" alt="Envelope com carta e coração brilhante"></div>
+                <h3>Memória 6</h3>
+                <input id="m6-input" placeholder="Digite a senha">
+                <button class="btn" onclick="unlock('m6')">Abrir</button>
+                <p class="message" id="m6">Você é o amor da minha vida.</p>
+            </article>
+        </div>
+
+            <button class="couple-photo" type="button" onclick="revealPhoto(this)" aria-label="Ver segunda foto do casal">
+                <img src="assets/embedded-af3a6fab53070ed2.png" alt="Foto do casal abraçado">
+            </button>
+        </div>
+    </section>
+    <div class="closing-signature">
+        <div class="closing-hearts" aria-hidden="true">
+            <span class="closing-heart">♥</span>
+            <span class="closing-heart">♥</span>
+            <span class="closing-heart">♥</span>
+            <span class="closing-heart">♥</span>
+        </div>
+        <p class="footer">Te amo, Mariana</p>
+        <section class="mare-signature" aria-label="Mare Personnalite — arte e tecnologia">
+            <img src="assets/mare-personalite.png" alt="Mare Personnalite — arte e tecnologia. Criação, inovação, conexão e resultados.">
+        </section>
+    </div>
+</main>
+
+
+<audio id="loveSoundtrack" src="assets/love-love.mp3" preload="auto" loop></audio>
+<div class="photo-modal" id="photoModal" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="closePhoto(event)">
+    <button class="photo-modal-close" type="button" onclick="closePhoto()" aria-label="Fechar foto">×</button>
+    <img id="photoModalImage" src="" alt="">
+</div>
+
+<script>
+function revealPhoto(button) {
+    button.classList.add('revealed');
+    button.setAttribute('aria-label', 'Foto do casal revelada');
+}
+
+function openPhoto(src, alt) {
+    const modal = document.getElementById('photoModal');
+    const image = document.getElementById('photoModalImage');
+    image.src = src;
+    image.alt = alt;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePhoto(event) {
+    if (event && event.target !== event.currentTarget) return;
+    document.getElementById('photoModal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closePhoto();
+});
+
+function enterSite() {
+    const input = document.getElementById('mainPassword');
+    if ((input.value || '').trim() === '0') {
+        const soundtrack = document.getElementById('loveSoundtrack');
+        soundtrack.volume = 0.38;
+        soundtrack.play().catch(() => {});
+        document.getElementById('gate').style.display = 'none';
+        document.documentElement.classList.remove('locked');
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => window.scrollTo(0, 0));
+        return;
+    }
+    alert('Senha incorreta');
+}
+
+function unlock(id) {
+    const input = document.getElementById(`${id}-input`);
+    const message = document.getElementById(id);
+    if ((input.value || '').trim() === '0') {
+        message.classList.add('open');
+        return;
+    }
+    alert('Senha incorreta');
+}
+
+document.getElementById('mainPassword').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') enterSite();
+});
+
+window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+</script>
+</body>
+</html>
